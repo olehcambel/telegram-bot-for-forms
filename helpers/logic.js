@@ -17,7 +17,6 @@ bot.on('message', (msg) => {
       if (isTextInput) {
         console.log(isTextInput + " isTextInput one")
         global.eventEmitter.emit(isTextInput, { msg, user, bot });
-
       } else if (check.replyMarkup(msg)) {
         console.log(check.replyMarkup(msg) + " replyMarkup two")
         handleKeyboard(msg);
