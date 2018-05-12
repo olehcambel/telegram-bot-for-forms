@@ -10,4 +10,6 @@ mongoose.connect(config.database)
 
 require('./helpers/logic')
 
+require('./helpers/statServer')
+
 console.log('Bot is up and running')
