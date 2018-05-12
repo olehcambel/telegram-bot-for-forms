@@ -1,0 +1,21 @@
+{
+  "name": "practicesix-tgbot-arbeittry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "engines": {
+    "node": ">=6.4"
+  },
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "events": "^2.0.0",
+    "mongoose": "^5.0.16",
+    "node-telegram-bot-api": "^0.30.0",
+    "nodemon": "^1.17.3"
+  }
+}
