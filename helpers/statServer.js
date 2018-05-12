@@ -1,7 +1,9 @@
 const dbmanager = require('./dbmanager');
-const http = require('http');
+// const http = require('http');
 
-http.createServer((req, res) => {
-}).listen(3000, () => {
+const PORT = process.env.PORT || 3000
+// http.createServer((req, res) => {
+// }).
+listen(PORT, () => {
   console.log('Statistics server listening on: 3000'); // eslint-disable-line no-console
 });
