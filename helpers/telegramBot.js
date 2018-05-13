@@ -13,12 +13,12 @@ if (config.should_use_webhooks) {
       },
     };
 
-  //   bot = new Telegram(config.telegram_api_key, options);
-  //   bot.setWebHook(
-  //     `${config.webhook_callback_url}${config.telegram_api_key}`,
-  //     path.join(config.ssl_certificate_path)
-  //   ).then(() => { console.log('Telegram webhook is active'); }) // eslint-disable-line no-console
-  //     .catch(/** todo: handle error */);
+    bot = new Telegram(config.telegram_api_key, options);
+    bot.setWebHook(
+      `${config.webhook_callback_url}${config.telegram_api_key}`,
+      path.join(config.ssl_certificate_path)
+    ).then(() => { console.log('Telegram webhook is active'); }) // eslint-disable-line no-console
+      .catch(/** todo: handle error */);
 } else {
   bot = new Telegram(config.telegram_api_key, {
     polling: true,
