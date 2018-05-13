@@ -20,9 +20,7 @@ if (config.should_use_webhooks) {
     ).then(() => { console.log('Telegram webhook is active'); }) // eslint-disable-line no-console
       .catch(/** todo: handle error */);
 } else {
-  bot = new Telegram(config.telegram_api_key, {
-    polling: true,
-  });
+  bot = new Telegram(config.telegram_api_key, { polling: true });
 
   bot.setWebHook({ url: '' });
 
