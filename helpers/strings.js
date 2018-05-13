@@ -31,7 +31,7 @@ const english = {
   phoneNumGroup: 'Телефон:',
 
   mainMenuOptions: {
-    findJobs: '👤 Profile',
+    // findJobs: '👤 Profile',
     findTour: '🛸🚁 Find tour',
     // help: '❔ Help',
     chooseLanguage: '👅 Choose language',

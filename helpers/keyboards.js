@@ -8,7 +8,7 @@ function mainMenuKeyboard(user) {
       { text: strings(user).mainMenuOptions.chooseLanguage },
       { text: strings(user).mainMenuOptions.findTour },
     ],
-    [{ text: strings(user).mainMenuOptions.findJobs }]
+    // [{ text: strings(user).mainMenuOptions.findJobs }]
   ];
 }
 

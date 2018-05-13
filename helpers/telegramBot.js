@@ -5,13 +5,13 @@ const path = require('path');
 let bot
 
 if (config.should_use_webhooks) {
-  //   const options = {
-  //     webHook: {
-  //       port: 8443,
-  //       key: path.join(config.ssl_key_path),
-  //       cert: path.join(config.ssl_certificate_path),
-  //     },
-  //   };
+    const options = {
+      webHook: {
+        port: 8443,
+        key: path.join(config.ssl_key_path),
+        cert: path.join(config.ssl_certificate_path),
+      },
+    };
 
   //   bot = new Telegram(config.telegram_api_key, options);
   //   bot.setWebHook(

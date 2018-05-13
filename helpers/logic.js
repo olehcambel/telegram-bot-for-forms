@@ -50,9 +50,10 @@ function handleKeyboard(msg) {
   const text = msg.text;
   const mainMenuOptions = strings().mainMenuOptions;
 
-  if (text === mainMenuOptions.findJobs) {
-    keyboards.botInGroup(msg.chat.id, bot);
-  } else if (text === mainMenuOptions.chooseLanguage) {
+  // if (text === mainMenuOptions.findJobs) {
+    // keyboards.botInGroup(msg.chat.id, bot);
+  // } else 
+  if (text === mainMenuOptions.chooseLanguage) {
     languagePicker.sendInterfaceLanguagePicker(bot, msg.chat.id);
   } else if (text === mainMenuOptions.findTour) {
     findTour.startFindTour(msg, bot)
