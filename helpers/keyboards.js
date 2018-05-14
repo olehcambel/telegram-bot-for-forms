@@ -123,7 +123,6 @@ function editMessage(bot, chatId, messageId, text, keyboard, markdown) {
 }
 
 function hideKeyboard(bot, chatId, text) {
-  // bot.ReplyKeyboardRemove()
   return bot.sendMessage(chatId, text, {
     reply_markup: JSON.stringify({
       hide_keyboard: true,

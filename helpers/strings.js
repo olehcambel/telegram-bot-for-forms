@@ -4,18 +4,17 @@ const ukrainianObjectId = '581d0b8db33e47e7008726bk';
 
 
 const english = {
-  initialMessage: 'Welcome, whoever you are to the travel Telegram bot Letsgoshka.\n\nIf you are looking for a tour, please fill out your "Find tour".\n\nThank you for joining our friendly family!',
-  mainMenuMessage: 'Hi again, dude! Select "Find tour" if you are looking for a tour,\nalso you can change language down below[not available]',
-  findTourHideKeyboardMessage: 'So here will be only 6 qustions, after them our agents will find and kill ya.',
+  initialMessage: 'Welcome to the Telegram bot! It has been created to help you find the dream tour. Enjoy!\nIf you are looking for a tour, please press the "Find tour" button or choose the language below.',
+  mainMenuMessage: 'Hi again!🙂\nIf you are looking for a tour, please press the "Find tour" button or choose the language below.',
 
-  countryChooseMessage: 'Lets start our form👳‍♂️🧕\n\n#1 Dude, type Country and City',
-  adultChildChooseMessage: '#2. Adults and Children 2a 4c, mkay?',
-  periodFromChooseMessage: '#3 Choose the date of departure',
-  periodToChooseMessage: '#4 Choose the end date',
-  priceChooseMessage: '#5 Mostly finished.. Man, whats your expected price for that sh..?)',
-  phoneChooseMessage: '#6 Last question.. your phone number',
-  sendAfterFindTourMessage: 'Okay, now go and wait for call, cuz your form has already been send into the hell\n😈👹👺💀👻',
-  setLanguageMessage: 'wanna change language?\nchoose one of em in the bottom 🇬🇧 or 🇷🇺',
+  countryChooseMessage: '1. What country and city do you want to go to? For example: "France, Paris".',
+  adultChildChooseMessage: '2. How many adults and children are there going to be? For example: "2 a 2 c".',
+  periodFromChooseMessage: '3. Choose the departure date',
+  periodToChooseMessage: '4. Choose the arrival date',
+  priceChooseMessage: '5. How much money are you ready to spend for your trip?',
+  phoneChooseMessage: '6. Please, type your number so that our agents are able to contact you.',
+  sendAfterFindTourMessage: 'Thank you so much for your time! Have a nice day. Our agents will contact you.',
+  setLanguageMessage: 'Wanna change language?\nchoose one of available below 🇬🇧 or 🇷🇺',
 
   countryGroupHtml: '<i>Страна:</i>',
   adultChildGroupHtml: '<i>Взрослые-дети:</i>',
@@ -38,7 +37,7 @@ const english = {
   },
 
   setLanguageOptions: {
-    ru: 'Russian 🇷🇺',
+    ru: 'Русский 🇷🇺',
     eng: 'English 🇬🇧'
   },
   ru: 'ru',
@@ -91,16 +90,99 @@ const english = {
 }
 
 const russian = {
+  initialMessage: 'Здравствуйте! Я - Телеграм бот!\nЕсли Вы ищете тур, то я помогу, выберите "Найти тур", а для смены языка "Выбрать язык".\nСпасибо за то, что выбрали меня!',
+  mainMenuMessage: 'Снова привет!🙂\nЕсли Вы ищете тур, то я помогу, выберите "Найти тур", а для смены языка "Выбрать язык".',
 
+  countryChooseMessage: '1. Выберите страну и город, которые хотите посетить. Например: Польша, Варшава.',
+  adultChildChooseMessage: '2. Сколько будет взрослых и детей? Например: 2 в 2 д',
+  periodFromChooseMessage: '3. Выберите дату отъезда.',
+  periodToChooseMessage: '4. Выберите дату приезда.',
+  priceChooseMessage: '5. Сколько Вы готовы потратить на поездку?',
+  phoneChooseMessage: '6. Пожалуйста, укажите свой номер телефона, чтобы наши агенты смогли с Вами связаться.',
+  sendAfterFindTourMessage: 'Большое спасибо за Ваше время! Отличного дня!',
+  setLanguageMessage: 'Хочешь сменить язык?\nВыбери один из доступних внизу 🇬🇧 or 🇷🇺',
+
+  countryGroupHtml: '<i>Страна:</i>',
+  adultChildGroupHtml: '<i>Взрослые-дети:</i>',
+  monthFromGroupHtml: '<i>Вылет:</i>',
+  monthToGroupHtml: '<i>Прилет:</i>',
+  priceGroupHtml: '<i>Цена:</i>',
+  phoneNumGroupHtml: '<i>Телефон:</i>',
+
+  countryGroup: 'Страна:',
+  adultChildGroup: 'Взрослые-дети:',
+  monthFromGroup: 'Вылет:',
+  monthToGroup: 'Прилет:',
+  priceGroup: 'Цена:',
+  phoneNumGroup: 'Телефон:',
+
+  mainMenuOptions: {
+    findTour: '🛸🚁 Найти тур',
+    // help: '❔ Help',
+    chooseLanguage: '👅 Выбрать язык',
+  },
+
+  setLanguageOptions: {
+    ru: 'Русский 🇷🇺',
+    eng: 'English 🇬🇧'
+  },
+  ru: 'ru',
+  eng: 'eng',
+
+  monthChooseOptions: [
+    'Январь', 'Февраль',
+    'Март', 'Апрель',
+    'Май', 'Июнь',
+    'Июль', 'Август',
+    'Сентябрь', 'Октябрь',
+    'Ноябрь', 'Декабрь'
+  ],
+  dayChooseOptions: [
+    '1', '2', '3', '4', '5', '6', '7',
+    '8', '9', '10', '11', '12', '13', '14',
+    '15', '16', '17', '18', '19', '20', '21',
+    '22', '23', '24', '25', '26', '27', '28',
+    '29', '30', '31'
+  ],
+  yearChooseOptions: [
+    '2018', '2019', '2020'
+  ],
+
+  priceChooseOptions: [
+    '$99 - $299', '$299 - $499',
+    '$499 - $999', '$999+'
+  ],
+
+  countryChooseState: 'cCS',
+  adultChildChooseState: 'aCCS',
+  monthFromChooseInline: 'mFCI',
+  dayFromChooseInline: 'dFCI',
+  yearFromChooseInline: 'yFCI',
+  monthToChooseInline: 'mTCI',
+  dayToChooseInline: 'dTCI',
+  yearToChooseInline: 'yTCI',
+  priceChooseInline: 'pCI',
+  phoneNumChooseState: 'cNCS',
+
+  setLanguageState: 'sLS',
+
+  statusInGroupOpen: '#open',
+  statusInGroupConfirmed: '#confirmed',
+  checkedInGroup: '☣checked',
+  checkedInGroupInline: 'cIGI',
+  // cancel: '❌ Cancel',
+  // inputFindTourCancelInline: 'iBCI',
+  inlineSeparator: '~',
 }
 const ukrainian = {}
 
 function locale(user) {
   //|| user.language_code === 'ru' || user.language_code === 'eng' || user.language_code === 'ua'
-  if (!user || user.language_code) {
-    return english;
-  } else {
+  if (!user) return english
+  else if (!user || user.language_code === 'ru') {
     return russian;
+  } else {
+    return english;
   }
 }
 
