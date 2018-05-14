@@ -1,6 +1,7 @@
 const keyboards = require('./keyboards');
 const states = require('./states');
 const findTour = require('./findTour');
+const languageInterface = require('./languageInterface');
 const dbmanager = require('./dbmanager');
 const strings = require('./strings');
 const check = require('./messageParser');
@@ -54,7 +55,7 @@ function handleKeyboard(msg) {
     // keyboards.botInGroup(msg.chat.id, bot);
   // } else 
   if (text === mainMenuOptions.chooseLanguage) {
-    languagePicker.sendInterfaceLanguagePicker(bot, msg.chat.id);
+    languageInterface.setLanguage(msg, bot);
   } else if (text === mainMenuOptions.findTour) {
     findTour.startFindTour(msg, bot)
   }

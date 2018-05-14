@@ -25,6 +25,29 @@ function sendMainMenu(bot, chatId, firstTime) {
     .catch(/** todo: handle error */);
 }
 
+function setLanguageMenu(bot, chatId, user) {
+  // const currentLanguage = ((user.language_code === 'ru') ? 
+  // strings().currentChoose + strings().setLanguageOptions.ru :
+  // strings().currentChoose + strings().setLanguageOptions.eng
+  // )
+  return sendKeyboard(
+    bot,
+    chatId,
+    strings().setLanguageMessage,
+    setLanguageKeyboard(user)
+  )
+}
+
+function setLanguageKeyboard(user) {
+  return [
+    [
+      { text: strings(user).setLanguageOptions.ru },
+      { text: strings(user).setLanguageOptions.eng },
+    ],
+    // [{ text: strings(user).mainMenuOptions.findJobs }]
+  ];
+}
+
 function botInGroup(chatId, bot) {
   dbmanager.findUser({ id: chatId })
     .then((user) => {
@@ -41,10 +64,6 @@ function botInGroup(chatId, bot) {
       )
     })
     .catch(/** todo: hangle error */)
-}
-
-function editBotInGroup(chatId, bot) {
-
 }
 
 function sendKeyboard(bot, chatId, text, keyboard, then) {

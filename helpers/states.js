@@ -158,5 +158,20 @@ global.eventEmitter.on(strings().checkedInGroupInline, ({ msg, bot }) => {
   )
 })
 
+global.eventEmitter.on(strings().setLanguageState, ({ msg, user, bot }) => {
+  const userCopy = Object.create(user)
+  userCopy.language_code = ((msg.text === strings().setLanguageOptions.ru) ?
+    strings().ru :
+    strings().eng
+  )
+  userCopy.input_state = undefined
+  userCopy.save()
+    .then((savedUser) => {
+      keyboards.sendKeyboard(bot, msg.chat.id,
+        strings().mainMenuMessage,
+        keyboards.mainMenuKeyboard()
+      )
+    })
+})
 // module.exports = {
 // };

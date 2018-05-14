@@ -15,6 +15,7 @@ const english = {
   priceChooseMessage: '#5 Mostly finished.. Man, whats your expected price for that sh..?)',
   phoneChooseMessage: '#6 Last question.. your phone number',
   sendAfterFindTourMessage: 'Okay, now go and wait for call, cuz your form has already been send into the hell\n😈👹👺💀👻',
+  setLanguageMessage: 'wanna change language? choose one of em in the bottom 🇬🇧 🇷🇺',
 
   countryGroupHtml: '<i>Страна:</i>',
   adultChildGroupHtml: '<i>Взрослые-дети:</i>',
@@ -31,11 +32,17 @@ const english = {
   phoneNumGroup: 'Телефон:',
 
   mainMenuOptions: {
-    // findJobs: '👤 Profile',
     findTour: '🛸🚁 Find tour',
     // help: '❔ Help',
     chooseLanguage: '👅 Choose language',
   },
+
+  setLanguageOptions: {
+    ru: 'Russian',
+    eng: 'English'
+  },
+  ru: 'ru',
+  eng: 'eng',
 
   monthChooseOptions: [
     'January', 'February',
@@ -63,7 +70,6 @@ const english = {
 
   countryChooseState: 'cCS',
   adultChildChooseState: 'aCCS',
-  nightsChooseInline: 'nCI',
   monthFromChooseInline: 'mFCI',
   dayFromChooseInline: 'dFCI',
   yearFromChooseInline: 'yFCI',
@@ -72,6 +78,8 @@ const english = {
   yearToChooseInline: 'yTCI',
   priceChooseInline: 'pCI',
   phoneNumChooseState: 'cNCS',
+
+  setLanguageState: 'sLS',
 
   statusInGroupOpen: '#open',
   statusInGroupConfirmed: '#confirmed',
@@ -82,7 +90,9 @@ const english = {
   inlineSeparator: '~',
 }
 
-const russian = {}
+const russian = {
+
+}
 const ukrainian = {}
 
 function locale(user) {
