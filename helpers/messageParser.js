@@ -49,8 +49,8 @@ function botCommandStart(message) {
 }
 
 function replyMarkup(message) {
-  const mainMenuOptions = Object.keys(strings(user).mainMenuOptions).map(
-    key => strings(user).mainMenuOptions[key]
+  const mainMenuOptions = Object.keys(strings().mainMenuOptions).map(
+    key => strings().mainMenuOptions[key]
   )
   return mainMenuOptions.indexOf(message.text) > -1
 }
