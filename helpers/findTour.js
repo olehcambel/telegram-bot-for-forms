@@ -13,7 +13,7 @@ function startFindTour(msg, bot) {
           const message = strings().countryChooseMessage
           // return keyboards.hideKeyboard(bot, msg.chat.id, strings().findTourHideKeyboardMessage)
             // .then(() => {
-              return keyboards.sendInline(bot, msg.chat.id, message, keyboards.hideKeyboard()
+              return keyboards.sendInline(bot, msg.chat.id, message, keyboards.hideKeyboard(bot)
                 // [[{ //   text: strings().cancel, //   callback_data: `${strings().inputFindTourCancelInline}${strings().inlineSeparator}`, // }]]
               );
             // });
