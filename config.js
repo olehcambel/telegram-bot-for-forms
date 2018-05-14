@@ -1,8 +1,8 @@
-// const dotenv = require('dotenv')
-// const path = require('path')
+const dotenv = require('dotenv')
+const path = require('path')
 
-// const root = path.join.bind(this, __dirname)
-// dotenv.config({ path: root('.env') })
+const root = path.join.bind(this, __dirname)
+dotenv.config({ path: root('.env') })
 
 module.exports = {
   telegram_api_key: process.env.TELEGRAM_API_KEY,
