@@ -123,7 +123,7 @@ function editMessage(bot, chatId, messageId, text, keyboard, markdown) {
 }
 
 function hideKeyboard(bot, chatId, text) {
-  return bot.sendMessage(chatId, text, {
+  return bot.sendMessage(chatId,  {
     reply_markup: JSON.stringify({
       hide_keyboard: true,
     }),
@@ -159,7 +159,7 @@ function sendTextInGroup(user) {
 module.exports = {
   mainMenuKeyboard,
   sendMainMenu,
-  setLanguageMenu,
+  setLanguage,
   setLanguageKeyboard,
   botInGroup,
   sendKeyboard,
