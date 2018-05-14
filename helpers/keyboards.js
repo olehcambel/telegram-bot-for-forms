@@ -123,12 +123,14 @@ function editMessage(bot, chatId, messageId, text, keyboard, markdown) {
 }
 
 function hideKeyboard(bot, chatId, text) {
-  return bot.sendMessage(chatId,  {
-    reply_markup: JSON.stringify({
-      hide_keyboard: true,
-    }),
+  return bot.ReplyKeyboardRemove({remove_keyboard: true})
+  // return bot.sendMessage(chatId, text, {
+    // reply_markup: JSON.stringify({
+      // hide_keyboard: true,
+    // }),
     // disable_web_page_preview: 'true',
-  })
+  // })
+
 }
 
 function sendTextInGroup(user) {
