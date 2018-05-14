@@ -39,7 +39,7 @@ bot.on('message', (msg) => {
 bot.on('callback_query', (msg) => {
   dbmanager.findUser({ id: msg.from.id })
     .then((user) => {
-      const options = msg.data.split(strings().inlineSeparator)
+      const options = msg.data.split(strings(user).inlineSeparator)
       const inlineQuery = options[0]
       console.log(`options - ${options}`)
 
@@ -49,7 +49,7 @@ bot.on('callback_query', (msg) => {
 
 function handleKeyboard(msg) {
   const text = msg.text;
-  const mainMenuOptions = strings().mainMenuOptions;
+  const mainMenuOptions = strings(user).mainMenuOptions;
 
   // if (text === mainMenuOptions.findJobs) {
     // keyboards.botInGroup(msg.chat.id, bot);

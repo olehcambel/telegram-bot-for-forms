@@ -27,13 +27,13 @@ function sendMainMenu(bot, chatId, firstTime) {
 
 function setLanguageMenu(bot, chatId, user) {
   // const currentLanguage = ((user.language_code === 'ru') ? 
-  // strings().currentChoose + strings().setLanguageOptions.ru :
-  // strings().currentChoose + strings().setLanguageOptions.eng
+  // strings(user).currentChoose + strings(user).setLanguageOptions.ru :
+  // strings(user).currentChoose + strings(user).setLanguageOptions.eng
   // )
   return sendKeyboard(
     bot,
     chatId,
-    strings().setLanguageMessage,
+    strings(user).setLanguageMessage,
     setLanguageKeyboard(user)
   )
 }
@@ -56,8 +56,8 @@ function botInGroup(chatId, bot) {
         config.adminChatId,
         text,
         [[{
-          text: strings().checkedInGroup,
-          callback_data: `${strings().checkedInGroupInline}`,
+          text: strings(user).checkedInGroup,
+          callback_data: `${strings(user).checkedInGroupInline}`,
         }]],
         undefined,
         true
@@ -137,22 +137,22 @@ function sendTextInGroup(user) {
   if (user.country_choose || user.phone_num) {
     text = `${text}\n`
     if (user.country_choose) {
-      text = `${text}\n${strings().countryGroupHtml} ${user.country_choose}`
+      text = `${text}\n${strings(user).countryGroupHtml} ${user.country_choose}`
     }
     if (user.adult_child) {
-      text = `${text}\n${strings().adultChildGroupHtml} ${user.adult_child}`
+      text = `${text}\n${strings(user).adultChildGroupHtml} ${user.adult_child}`
     }
     if (user.month_from_choose && user.day_from_choose && user.year_from_choose) {
-      text = `${text}\n${strings().monthFromGroupHtml} ${user.month_from_choose} ${user.day_from_choose}.${user.year_from_choose}`
+      text = `${text}\n${strings(user).monthFromGroupHtml} ${user.month_from_choose} ${user.day_from_choose}.${user.year_from_choose}`
     }
     if (user.month_to_choose && user.day_to_choose && user.year_to_choose) {
-      text = `${text}\n${strings().monthToGroupHtml} ${user.month_to_choose} ${user.day_to_choose}.${user.year_to_choose}`
+      text = `${text}\n${strings(user).monthToGroupHtml} ${user.month_to_choose} ${user.day_to_choose}.${user.year_to_choose}`
     }
     if (user.price_choose) {
-      text = `${text}\n${strings().priceGroupHtml} ${user.price_choose}`
+      text = `${text}\n${strings(user).priceGroupHtml} ${user.price_choose}`
     }
     if (user.phone_num) {
-      text = `${text}\n${strings().phoneNumGroupHtml} <b>${user.phone_num}</b>`
+      text = `${text}\n${strings(user).phoneNumGroupHtml} <b>${user.phone_num}</b>`
     }
   }
   return text
