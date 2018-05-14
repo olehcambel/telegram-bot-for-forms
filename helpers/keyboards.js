@@ -122,7 +122,7 @@ function editMessage(bot, chatId, messageId, text, keyboard, markdown) {
   }).catch(/** todo: handle error */);
 }
 
-function hideKeyboard() {
+function hideKeyboard(bot) {
   bot.ReplyKeyboardRemove({remove_keyboard: true})
   // return bot.sendMessage(chatId, text, {
     // reply_markup: JSON.stringify({
