@@ -11,12 +11,12 @@ function startFindTour(msg, bot) {
       return userCopy.save()
         .then((savedUser) => {
           const message = strings().countryChooseMessage
-          return keyboards.hideKeyboard(bot, msg.chat.id, strings().findTourHideKeyboardMessage)
-            .then(() => {
-              keyboards.sendInline(bot, msg.chat.id, message,
+          // return keyboards.hideKeyboard(bot, msg.chat.id, strings().findTourHideKeyboardMessage)
+            // .then(() => {
+              return keyboards.sendInline(bot, msg.chat.id, message, keyboards.hideKeyboard()
                 // [[{ //   text: strings().cancel, //   callback_data: `${strings().inputFindTourCancelInline}${strings().inlineSeparator}`, // }]]
               );
-            });
+            // });
         });
     })
     .catch(/** todo: handle error */);
