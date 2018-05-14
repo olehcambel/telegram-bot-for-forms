@@ -15,7 +15,7 @@ const english = {
   priceChooseMessage: '#5 Mostly finished.. Man, whats your expected price for that sh..?)',
   phoneChooseMessage: '#6 Last question.. your phone number',
   sendAfterFindTourMessage: 'Okay, now go and wait for call, cuz your form has already been send into the hell\n😈👹👺💀👻',
-  setLanguageMessage: 'wanna change language? choose one of em in the bottom 🇬🇧 or 🇷🇺',
+  setLanguageMessage: 'wanna change language?\nchoose one of em in the bottom 🇬🇧 or 🇷🇺',
 
   countryGroupHtml: '<i>Страна:</i>',
   adultChildGroupHtml: '<i>Взрослые-дети:</i>',

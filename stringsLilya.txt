@@ -1,0 +1,27 @@
+﻿english = {
+  initialMessage: 'Welcome to the Telegram bot .\n\nIf you are looking for a tour, please press the "Find tour" button.\n\nThank you for joining!',
+  mainMenuMessage: 'Select "Find tour" if you are looking for a tour,\nor choose the language below[not available]',
+  findTourHideKeyboardMessage: 'А обязательно этот вопрос?.',
+
+  countryChooseMessage: '#1 What country and city do you want to go to? For example: "France, Paris ",
+  adultChildChooseMessage: '#2. How many adults and children are there going to be? For example: "2 a 2 c". ',
+  periodFromChooseMessage: '#3 Choose the departure date',
+  periodToChooseMessage: '#4 Choose the arrival date',
+  priceChooseMessage: '#5 How much money are you ready to spend for your trip? ',
+  phoneChooseMessage: '#6 Please, type your number so that our agents are able to contact you. ',
+  sendAfterFindTourMessage: 'Thank you so much for your time! Have a nice day. Our agents will contact you.',
+}
+
+russian = {
+  initialMessage: 'Здравствуйте! Я - Телеграм бот.\n\Если Вы ищете тур, то я помогу\n\nСпасибо за то, что выбрали меня!',
+  mainMenuMessage: 'Нажмите "Найти тур".\n Вы также можете сменить язык.[not available]',
+  findTourHideKeyboardMessage: 
+
+  countryChooseMessage: '#1. Выберите страну и город, которые хотите посетить. Например: Польша, Варшава.',
+  adultChildChooseMessage: '#2. Сколько будет взрослых и детей? Например: 2 в 2 д',
+  periodFromChooseMessage: '#3 Выберите дату отъезда.',
+  periodToChooseMessage: '#4 Выберите дату приезда.',
+  priceChooseMessage: '#5 Сколько Вы готовы потратить на поездку?',
+  phoneChooseMessage: '#6 Пожалуйста, укажите свой номер телефона, чтобы наши агенты смогли с Вами связаться.',
+  sendAfterFindTourMessage: 'Большое спасибо за Ваше время! Отличного дня!',
+}
