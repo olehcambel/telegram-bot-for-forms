@@ -159,7 +159,7 @@ function sendTextInGroup(user) {
 module.exports = {
   mainMenuKeyboard,
   sendMainMenu,
-  setLanguage,
+  setLanguageMenu,
   setLanguageKeyboard,
   botInGroup,
   sendKeyboard,
