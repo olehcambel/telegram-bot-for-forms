@@ -4,7 +4,7 @@ const strings = require('./strings');
 const findTour = require('./findTour');
 const config = require('../config');
 
-global.eventEmitter.on(strings(user).countryChooseState, ({ msg, user, bot }) => {
+global.eventEmitter.on(strings().countryChooseState, ({ msg, user, bot }) => {
   const newCountry = msg.text.substring(0, 30)
   const userCopy = Object.create(user)
   userCopy.country_choose = newCountry
@@ -16,7 +16,7 @@ global.eventEmitter.on(strings(user).countryChooseState, ({ msg, user, bot }) =>
     .catch(/** todo: handle error */)
 })
 
-global.eventEmitter.on(strings(user).adultChildChooseState, ({ msg, user, bot }) => {
+global.eventEmitter.on(strings().adultChildChooseState, ({ msg, user, bot }) => {
   const newAdultChild = msg.text.substring(0, 30)
   const userCopy = Object.create(user)
   userCopy.adult_child = newAdultChild
@@ -28,8 +28,8 @@ global.eventEmitter.on(strings(user).adultChildChooseState, ({ msg, user, bot })
     .catch()
 })
 
-global.eventEmitter.on(strings(user).monthFromChooseInline, ({ msg, bot }) => {
-  const command = msg.data.split(strings(user).inlineSeparator)[1]
+global.eventEmitter.on(strings().monthFromChooseInline, ({ msg, bot }) => {
+  const command = msg.data.split(strings().inlineSeparator)[1]
   dbmanager.findUser({ id: msg.message.chat.id })
     .then((user) => {
       const userCopy = Object.create(user)
@@ -42,8 +42,8 @@ global.eventEmitter.on(strings(user).monthFromChooseInline, ({ msg, bot }) => {
     .catch()
 })
 
-global.eventEmitter.on(strings(user).dayFromChooseInline, ({ msg, bot }) => {
-  const command = msg.data.split(strings(user).inlineSeparator)[1]
+global.eventEmitter.on(strings().dayFromChooseInline, ({ msg, bot }) => {
+  const command = msg.data.split(strings().inlineSeparator)[1]
   dbmanager.findUser({ id: msg.message.chat.id })
     .then((user) => {
       const userCopy = Object.create(user)
@@ -56,8 +56,8 @@ global.eventEmitter.on(strings(user).dayFromChooseInline, ({ msg, bot }) => {
     .catch()
 })
 
-global.eventEmitter.on(strings(user).yearFromChooseInline, ({ msg, bot }) => {
-  const command = msg.data.split(strings(user).inlineSeparator)[1]
+global.eventEmitter.on(strings().yearFromChooseInline, ({ msg, bot }) => {
+  const command = msg.data.split(strings().inlineSeparator)[1]
   dbmanager.findUser({ id: msg.message.chat.id })
     .then((user) => {
       const userCopy = Object.create(user)
@@ -70,8 +70,8 @@ global.eventEmitter.on(strings(user).yearFromChooseInline, ({ msg, bot }) => {
     .catch()
 })
 
-global.eventEmitter.on(strings(user).monthToChooseInline, ({ msg, bot }) => {
-  const command = msg.data.split(strings(user).inlineSeparator)[1]
+global.eventEmitter.on(strings().monthToChooseInline, ({ msg, bot }) => {
+  const command = msg.data.split(strings().inlineSeparator)[1]
   dbmanager.findUser({ id: msg.message.chat.id })
     .then((user) => {
       const userCopy = Object.create(user)
@@ -84,8 +84,8 @@ global.eventEmitter.on(strings(user).monthToChooseInline, ({ msg, bot }) => {
     .catch()
 })
 
-global.eventEmitter.on(strings(user).dayToChooseInline, ({ msg, bot }) => {
-  const command = msg.data.split(strings(user).inlineSeparator)[1]
+global.eventEmitter.on(strings().dayToChooseInline, ({ msg, bot }) => {
+  const command = msg.data.split(strings().inlineSeparator)[1]
   dbmanager.findUser({ id: msg.message.chat.id })
     .then((user) => {
       const userCopy = Object.create(user)
@@ -98,8 +98,8 @@ global.eventEmitter.on(strings(user).dayToChooseInline, ({ msg, bot }) => {
     .catch()
 })
 
-global.eventEmitter.on(strings(user).yearToChooseInline, ({ msg, bot }) => {
-  const command = msg.data.split(strings(user).inlineSeparator)[1]
+global.eventEmitter.on(strings().yearToChooseInline, ({ msg, bot }) => {
+  const command = msg.data.split(strings().inlineSeparator)[1]
   dbmanager.findUser({ id: msg.message.chat.id })
     .then((user) => {
       const userCopy = Object.create(user)
@@ -112,8 +112,8 @@ global.eventEmitter.on(strings(user).yearToChooseInline, ({ msg, bot }) => {
     .catch()
 })
 
-global.eventEmitter.on(strings(user).priceChooseInline, ({ msg, bot }) => {
-  const command = msg.data.split(strings(user).inlineSeparator)[1]
+global.eventEmitter.on(strings().priceChooseInline, ({ msg, bot }) => {
+  const command = msg.data.split(strings().inlineSeparator)[1]
 
   dbmanager.findUser({ id: msg.message.chat.id })
     .then((user) => {
@@ -126,7 +126,7 @@ global.eventEmitter.on(strings(user).priceChooseInline, ({ msg, bot }) => {
     })
 })
 
-global.eventEmitter.on(strings(user).phoneNumChooseState, ({ msg, user, bot }) => {
+global.eventEmitter.on(strings().phoneNumChooseState, ({ msg, user, bot }) => {
   const newPhoneNum = msg.text.substring(0, 25)
   const userCopy = Object.create(user)
   userCopy.phone_num = newPhoneNum
@@ -141,14 +141,14 @@ global.eventEmitter.on(strings(user).phoneNumChooseState, ({ msg, user, bot }) =
     })
 })
 
-global.eventEmitter.on(strings(user).checkedInGroupInline, ({ msg, bot }) => {
-  let text = msg.message.text.replace(strings(user).statusInGroupOpen, strings(user).statusInGroupConfirmed)
-    .replace(strings(user).countryGroup, strings(user).countryGroupHtml)
-    .replace(strings(user).adultChildGroup, strings(user).adultChildGroupHtml)
-    .replace(strings(user).monthFromGroup, strings(user).monthFromGroupHtml)
-    .replace(strings(user).monthToGroup, strings(user).monthToGroupHtml)
-    .replace(strings(user).priceGroup, strings(user).priceGroupHtml)
-    .replace(strings(user).phoneNumGroup, strings(user).phoneNumGroupHtml)
+global.eventEmitter.on(strings().checkedInGroupInline, ({ msg, bot }) => {
+  let text = msg.message.text.replace(strings().statusInGroupOpen, strings().statusInGroupConfirmed)
+    .replace(strings().countryGroup, strings().countryGroupHtml)
+    .replace(strings().adultChildGroup, strings().adultChildGroupHtml)
+    .replace(strings().monthFromGroup, strings().monthFromGroupHtml)
+    .replace(strings().monthToGroup, strings().monthToGroupHtml)
+    .replace(strings().priceGroup, strings().priceGroupHtml)
+    .replace(strings().phoneNumGroup, strings().phoneNumGroupHtml)
   keyboards.editMessage(bot,
     config.adminChatId,
     msg.message.message_id,
@@ -158,17 +158,17 @@ global.eventEmitter.on(strings(user).checkedInGroupInline, ({ msg, bot }) => {
   )
 })
 
-global.eventEmitter.on(strings(user).setLanguageState, ({ msg, user, bot }) => {
+global.eventEmitter.on(strings().setLanguageState, ({ msg, user, bot }) => {
   const userCopy = Object.create(user)
-  userCopy.language_code = ((msg.text === strings(user).setLanguageOptions.ru) ?
-    strings(user).ru :
-    strings(user).eng
+  userCopy.language_code = ((msg.text === strings().setLanguageOptions.ru) ?
+    strings().ru :
+    strings().eng
   )
   userCopy.input_state = undefined
   userCopy.save()
     .then((savedUser) => {
       keyboards.sendKeyboard(bot, msg.chat.id,
-        strings(user).mainMenuMessage,
+        strings(savedUser).mainMenuMessage,
         keyboards.mainMenuKeyboard()
       )
     })
