@@ -6,15 +6,15 @@ function startFindTour(msg, bot) {
   dbmanager.findUser({ id: msg.chat.id })
     .then((user) => {
       const userCopy = Object.create(user);
-      userCopy.input_state = strings(user).countryChooseState;
+      userCopy.input_state = strings().countryChooseState;
       userCopy.forms_id = msg.message_id;
       return userCopy.save()
         .then((savedUser) => {
-          const message = strings(user).countryChooseMessage
+          const message = strings().countryChooseMessage
           return keyboards.hideKeyboard(bot, msg.chat.id, message)
             // .then(() => {
               // return keyboards.sendInline(bot, msg.chat.id, message, 
-                // [[{ //   text: strings(user).cancel, //   callback_data: `${strings(user).inputFindTourCancelInline}${strings(user).inlineSeparator}`, // }]]
+                // [[{ //   text: strings().cancel, //   callback_data: `${strings().inputFindTourCancelInline}${strings().inlineSeparator}`, // }]]
               // );
             // });
         });
@@ -23,8 +23,8 @@ function startFindTour(msg, bot) {
 }
 
 function editAdultChildChoose(msg, bot, user) {
-  bot.sendMessage(msg.chat.id, strings(user).adultChildChooseMessage)
-  user.input_state = strings(user).adultChildChooseState //delete then
+  bot.sendMessage(msg.chat.id, strings().adultChildChooseMessage)
+  user.input_state = strings().adultChildChooseState //delete then
   user.save()
 }
 
@@ -32,12 +32,12 @@ function editMonthFromChoose(msg, bot, user) {
   keyboards.sendInline(
     bot,
     msg.chat.id,
-    strings(user).periodFromChooseMessage,
+    strings().periodFromChooseMessage,
     editorChooseKeyboards(
       user,
       user.month_from_choose,
-      strings(user).monthFromChooseInline,
-      strings(user).monthChooseOptions
+      strings().monthFromChooseInline,
+      strings().monthChooseOptions
     )
   )
 }
@@ -47,12 +47,12 @@ function editDayFromChoose(msg, bot, user) {
     bot,
     msg.message.chat.id,
     msg.message.message_id,
-    `${strings(user).periodFromChooseMessage}\n${user.month_from_choose}`,
+    `${strings().periodFromChooseMessage}\n${user.month_from_choose}`,
     editorChooseKeyboards(
       user,
       user.day_from_choose,
-      strings(user).dayFromChooseInline,
-      strings(user).dayChooseOptions,
+      strings().dayFromChooseInline,
+      strings().dayChooseOptions,
     )
   )
 }
@@ -62,12 +62,12 @@ function editYearFromChoose(msg, bot, user) {
     bot,
     msg.message.chat.id,
     msg.message.message_id,
-    `${strings(user).periodFromChooseMessage}\n${user.month_from_choose} ${user.day_from_choose}`,
+    `${strings().periodFromChooseMessage}\n${user.month_from_choose} ${user.day_from_choose}`,
     editorChooseKeyboards(
       user,
       user.year_from_choose,
-      strings(user).yearFromChooseInline,
-      strings(user).yearChooseOptions
+      strings().yearFromChooseInline,
+      strings().yearChooseOptions
     )
   )
 }
@@ -77,17 +77,17 @@ function editMonthToChoose(msg, bot, user) {
     bot,
     msg.message.chat.id,
     msg.message.message_id,
-    `${strings(user).periodFromChooseMessage}\n${user.month_from_choose} ${user.day_from_choose} ${user.year_from_choose}`,
+    `${strings().periodFromChooseMessage}\n${user.month_from_choose} ${user.day_from_choose} ${user.year_from_choose}`,
   )
   keyboards.sendInline(
     bot,
     msg.message.chat.id,
-    strings(user).periodToChooseMessage,
+    strings().periodToChooseMessage,
     editorChooseKeyboards(
       user,
       user.month_to_choose,
-      strings(user).monthToChooseInline,
-      strings(user).monthChooseOptions
+      strings().monthToChooseInline,
+      strings().monthChooseOptions
     )
   )
 }
@@ -98,12 +98,12 @@ function editDayToChoose(msg, bot, user) {
     bot,
     msg.message.chat.id,
     msg.message.message_id,
-    `${strings(user).periodToChooseMessage} \n${user.month_to_choose}`,
+    `${strings().periodToChooseMessage} \n${user.month_to_choose}`,
     editorChooseKeyboards(
       user,
       user.day_to_choose,
-      strings(user).dayToChooseInline,
-      strings(user).dayChooseOptions,
+      strings().dayToChooseInline,
+      strings().dayChooseOptions,
     )
   )
 }
@@ -113,12 +113,12 @@ function editYearToChoose(msg, bot, user) {
     bot,
     msg.message.chat.id,
     msg.message.message_id,
-    `${strings(user).periodToChooseMessage} \n${user.month_to_choose} ${user.day_to_choose}`,
+    `${strings().periodToChooseMessage} \n${user.month_to_choose} ${user.day_to_choose}`,
     editorChooseKeyboards(
       user,
       user.year_to_choose,
-      strings(user).yearToChooseInline,
-      strings(user).yearChooseOptions
+      strings().yearToChooseInline,
+      strings().yearChooseOptions
     )
   )
 }
@@ -128,24 +128,24 @@ function editPriceChoose(msg, bot, user) {
     bot,
     msg.message.chat.id,
     msg.message.message_id,
-    `${strings(user).periodToChooseMessage} \n${user.month_to_choose} ${user.day_to_choose} ${user.year_to_choose}`,
+    `${strings().periodToChooseMessage} \n${user.month_to_choose} ${user.day_to_choose} ${user.year_to_choose}`,
   )
   keyboards.sendInline(
     bot,
     msg.message.chat.id,
-    strings(user).priceChooseMessage,
+    strings().priceChooseMessage,
     editorChooseKeyboards(
       user,
       user.price_choose,
-      strings(user).priceChooseInline,
-      strings(user).priceChooseOptions
+      strings().priceChooseInline,
+      strings().priceChooseOptions
     )
   )
 }
 
 function editPhoneNumChoose(msg, bot, user) {
-  keyboards.editMessage(bot, msg.message.chat.id, msg.message.message_id, strings(user).phoneChooseMessage)
-  user.input_state = strings(user).phoneNumChooseState
+  keyboards.editMessage(bot, msg.message.chat.id, msg.message.message_id, strings().phoneChooseMessage)
+  user.input_state = strings().phoneNumChooseState
   user.save()
 }
 
@@ -158,16 +158,16 @@ function editorChooseKeyboards(user, period_choose, periodInline, periodOptions)
     const currentPeriod = periodOptions[i]
     const text = currentPeriod
     let periodDivider = i % 2 === 1
-    if (periodInline === strings(user).dayFromChooseInline ||
-      periodInline === strings(user).dayToChooseInline) {
+    if (periodInline === strings().dayFromChooseInline ||
+      periodInline === strings().dayToChooseInline) {
       periodDivider = i === 6 || i === 13 || i === 20 || i === 27 || i === 30
-    } else if (periodInline === strings(user).yearFromChooseInline ||
-      periodInline === strings(user).yearToChooseInline) {
+    } else if (periodInline === strings().yearFromChooseInline ||
+      periodInline === strings().yearToChooseInline) {
       periodDivider = i === 2
     }
     tempRow.push({
       text,
-      callback_data: periodInline + strings(user).inlineSeparator + currentPeriod
+      callback_data: periodInline + strings().inlineSeparator + currentPeriod
     })
     if (periodDivider) {
       keyboard.push(tempRow)
