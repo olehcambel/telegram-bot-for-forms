@@ -178,7 +178,8 @@ const ukrainian = {}
 
 function locale(user) {
   //|| user.language_code === 'ru' || user.language_code === 'eng' || user.language_code === 'ua'
-  if (!user) return english
+  if (!user) {return english
+  }
   else if (user.language_code === 'ru') {
     return russian;
   } else {

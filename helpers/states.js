@@ -136,19 +136,19 @@ global.eventEmitter.on(strings().phoneNumChooseState, ({ msg, user, bot }) => {
       keyboards.botInGroup(msg.chat.id, bot)
       keyboards.sendKeyboard(bot, msg.chat.id,
         strings(user).sendAfterFindTourMessage,
-        keyboards.mainMenuKeyboard()
+        keyboards.mainMenuKeyboard(savedUser)
       )
     })
 })
 
 global.eventEmitter.on(strings().checkedInGroupInline, ({ msg, bot }) => {
-  let text = msg.message.text.replace(strings().statusInGroupOpen, strings().statusInGroupConfirmed)
-    .replace(strings().countryGroup, strings().countryGroupHtml)
-    .replace(strings().adultChildGroup, strings().adultChildGroupHtml)
-    .replace(strings().monthFromGroup, strings().monthFromGroupHtml)
-    .replace(strings().monthToGroup, strings().monthToGroupHtml)
-    .replace(strings().priceGroup, strings().priceGroupHtml)
-    .replace(strings().phoneNumGroup, strings().phoneNumGroupHtml)
+  let text = msg.message.text.replace(strings(user).statusInGroupOpen, strings(user).statusInGroupConfirmed)
+    .replace(strings(user).countryGroup, strings(user).countryGroupHtml)
+    .replace(strings(user).adultChildGroup, strings(user).adultChildGroupHtml)
+    .replace(strings(user).monthFromGroup, strings(user).monthFromGroupHtml)
+    .replace(strings(user).monthToGroup, strings(user).monthToGroupHtml)
+    .replace(strings(user).priceGroup, strings(user).priceGroupHtml)
+    .replace(strings(user).phoneNumGroup, strings(user).phoneNumGroupHtml)
   keyboards.editMessage(bot,
     config.adminChatId,
     msg.message.message_id,
@@ -160,16 +160,16 @@ global.eventEmitter.on(strings().checkedInGroupInline, ({ msg, bot }) => {
 
 global.eventEmitter.on(strings().setLanguageState, ({ msg, user, bot }) => {
   const userCopy = Object.create(user)
-  userCopy.language_code = ((msg.text === strings().setLanguageOptions.ru) ?
-    strings().ru :
-    strings().eng
+  userCopy.language_code = ((msg.text === strings(user).setLanguageOptions.ru) ?
+    strings(user).ru :
+    strings(user).eng
   )
   userCopy.input_state = undefined
   userCopy.save()
     .then((savedUser) => {
       keyboards.sendKeyboard(bot, msg.chat.id,
         strings(savedUser).mainMenuMessage,
-        keyboards.mainMenuKeyboard()
+        keyboards.mainMenuKeyboard(savedUser)
       )
     })
 })

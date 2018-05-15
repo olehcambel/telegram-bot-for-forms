@@ -18,6 +18,8 @@ function createProfile(bot, msg) {
       const user = obj.user;
       const isNew = obj.new;
       // if (isNew) adminReports.userRegistered(bot, user);
+      user.language_code = msg.from.language_code;
+      user.save()
       keyboards.sendMainMenu(bot, msg.chat.id, true)
     })
     .catch(/** todo: handle error */);
@@ -32,7 +34,6 @@ function updateProfile(msg, user) {
     userCopy.first_name = msg.from.first_name;
     userCopy.last_name = msg.from.last_name;
     userCopy.username = msg.from.username;
-    userCopy.language_code = msg.from.language_code;
 
     userCopy.save()
       .catch(/** todo: handle error */);
@@ -48,9 +49,9 @@ function botCommandStart(message) {
   return false;
 }
 
-function replyMarkup(message) {
-  const mainMenuOptions = Object.keys(strings().mainMenuOptions).map(
-    key => strings().mainMenuOptions[key]
+function replyMarkup(message, user) {
+  const mainMenuOptions = Object.keys(strings(user).mainMenuOptions).map(
+    key => strings(user).mainMenuOptions[key]
   )
   return mainMenuOptions.indexOf(message.text) > -1
 }

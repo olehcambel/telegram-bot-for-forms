@@ -18,9 +18,9 @@ bot.on('message', (msg) => {
       if (isTextInput) {
         console.log(isTextInput + " isTextInput one")
         global.eventEmitter.emit(isTextInput, { msg, user, bot });
-      } else if (check.replyMarkup(msg)) {
+      } else if (check.replyMarkup(msg, user)) {
         console.log(check.replyMarkup(msg) + " replyMarkup two")
-        handleKeyboard(msg);
+        handleKeyboard(msg, user);
       } else if (check.botCommandStart(msg)) {
         console.log(check.botCommandStart(msg) + " bCS sendMainMenu three")
         keyboards.sendMainMenu(bot, msg.chat.id, false);
@@ -39,7 +39,7 @@ bot.on('message', (msg) => {
 bot.on('callback_query', (msg) => {
   dbmanager.findUser({ id: msg.from.id })
     .then((user) => {
-      const options = msg.data.split(strings().inlineSeparator)
+      const options = msg.data.split(strings(user).inlineSeparator)
       const inlineQuery = options[0]
       console.log(`options - ${options}`)
 
@@ -47,9 +47,9 @@ bot.on('callback_query', (msg) => {
     })
 })
 
-function handleKeyboard(msg) {
+function handleKeyboard(msg, user) {
   const text = msg.text;
-  const mainMenuOptions = strings().mainMenuOptions;
+  const mainMenuOptions = strings(user).mainMenuOptions;
 
   // if (text === mainMenuOptions.findJobs) {
     // keyboards.botInGroup(msg.chat.id, bot);
