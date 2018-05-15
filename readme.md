@@ -1,20 +1,21 @@
-# Telegram bot for forms using JS and server-side NodeJS 
+telegram-bot-for-forms was done to create tourism forms using final state machine with reply_markup and inline keyboards with, button to change language. After creating form and saving into MongoDB - it will be sent into the group or channel with that information. 
 
 ### Instalation
 ***
 npm i
 
-npm run start *or* npm run dev
-
+npm run start
+***
 use [mlab.com](https://mlab.com/) for mongoDB
 
-find file .env.example to add Environment Variables
+file .env.example to add Environment Variables
+***
+uncomment in config.js
 
+*// const dotenv = require('dotenv')*
 
-remove comment out in config.js
+*// const path = require('path')*
 
-// const dotenv = require('dotenv')
-// const path = require('path')
+*// const root = path.join.bind(this, __dirname)*
 
-// const root = path.join.bind(this, __dirname)
-// dotenv.config({ path: root('.env') })
+*// dotenv.config({ path: root('.env') })*
