@@ -142,7 +142,7 @@ global.eventEmitter.on(strings().phoneNumChooseState, ({ msg, user, bot }) => {
 })
 
 global.eventEmitter.on(strings().checkedInGroupInline, ({ msg, bot }) => {
-  let text = msg.message.text.replace(strings().statusInGroupOpen, strings(user).statusInGroupConfirmed)
+  let text = msg.message.text.replace(strings().statusInGroupOpen, strings().statusInGroupConfirmed)
     .replace(strings().countryGroup, strings().countryGroupHtml)
     .replace(strings().adultChildGroup, strings().adultChildGroupHtml)
     .replace(strings().monthFromGroup, strings().monthFromGroupHtml)
