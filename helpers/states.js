@@ -142,13 +142,13 @@ global.eventEmitter.on(strings().phoneNumChooseState, ({ msg, user, bot }) => {
 })
 
 global.eventEmitter.on(strings().checkedInGroupInline, ({ msg, bot }) => {
-  let text = msg.message.text.replace(strings(user).statusInGroupOpen, strings(user).statusInGroupConfirmed)
-    .replace(strings(user).countryGroup, strings(user).countryGroupHtml)
-    .replace(strings(user).adultChildGroup, strings(user).adultChildGroupHtml)
-    .replace(strings(user).monthFromGroup, strings(user).monthFromGroupHtml)
-    .replace(strings(user).monthToGroup, strings(user).monthToGroupHtml)
-    .replace(strings(user).priceGroup, strings(user).priceGroupHtml)
-    .replace(strings(user).phoneNumGroup, strings(user).phoneNumGroupHtml)
+  let text = msg.message.text.replace(strings().statusInGroupOpen, strings(user).statusInGroupConfirmed)
+    .replace(strings().countryGroup, strings().countryGroupHtml)
+    .replace(strings().adultChildGroup, strings().adultChildGroupHtml)
+    .replace(strings().monthFromGroup, strings().monthFromGroupHtml)
+    .replace(strings().monthToGroup, strings().monthToGroupHtml)
+    .replace(strings().priceGroup, strings().priceGroupHtml)
+    .replace(strings().phoneNumGroup, strings().phoneNumGroupHtml)
   keyboards.editMessage(bot,
     config.adminChatId,
     msg.message.message_id,
