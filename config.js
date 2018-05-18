@@ -15,5 +15,4 @@ module.exports = {
   ssl_key_path: process.env.SSL_KEY_PATH,
   ssh_rsa_path: process.env.SSH_RSA_PATH,
   adminChatId: process.env.ADMIN_CHAT_ID,
-  // https://telegram-bot-for-forms.herokuapp.com
 };
