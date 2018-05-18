@@ -4,8 +4,8 @@ const ukrainianObjectId = '581d0b8db33e47e7008726bk';
 
 
 const english = {
-  initialMessage: 'Welcome to the Telegram bot! It has been created to help you find the dream tour. Enjoy!\nIf you are looking for a tour, please press the "Find tour" button or choose the language below.',
-  mainMenuMessage: 'Hi again!🙂\nIf you are looking for a tour, please press the "Find tour" button or choose the language below.',
+  initialMessage: 'Welcome to the Telegram bot! It has been created to help you find the dream tour. Enjoy!\nIf you are looking for a tour, please click the "Find tour" button and to change language click the "Choose language".\nThanks for joining!',
+  mainMenuMessage: 'Hi again!🙂\nIf you are looking for a tour, please click the "Find tour" button and to change language click the "Choose language".',
 
   countryChooseMessage: '1. What country and city do you want to go to? For example: "France, Paris".',
   adultChildChooseMessage: '2. How many adults and children are there going to be? For example: "2 a 2 c".',
@@ -90,8 +90,8 @@ const english = {
 }
 
 const russian = {
-  initialMessage: 'Здравствуйте! Я - Телеграм бот!\nЕсли Вы ищете тур, то я помогу, выберите "Найти тур", а для смены языка "Выбрать язык".\nСпасибо за то, что выбрали меня!',
-  mainMenuMessage: 'Снова привет!🙂\nЕсли Вы ищете тур, то я помогу, выберите "Найти тур", а для смены языка "Выбрать язык".',
+  initialMessage: 'Здравствуйте! Я - Телеграм бот!\nЕсли Вы ищете тур, то я помогу. Выберите "Найти тур", а для смены языка нажмите на "Выбрать язык".\nСпасибо за то, что выбрали меня!',
+  mainMenuMessage: 'Снова привет!🙂\nЕсли Вы ищете тур, то я помогу. Выберите "Найти тур", а для смены языка нажмите на "Выбрать язык".',
 
   countryChooseMessage: '1. Выберите страну и город, которые хотите посетить. Например: Польша, Варшава.',
   adultChildChooseMessage: '2. Сколько будет взрослых и детей? Например: 2 в 2 д',
@@ -100,7 +100,7 @@ const russian = {
   priceChooseMessage: '5. Сколько Вы готовы потратить на поездку?',
   phoneChooseMessage: '6. Пожалуйста, укажите свой номер телефона, чтобы наши агенты смогли с Вами связаться.',
   sendAfterFindTourMessage: 'Большое спасибо за Ваше время! Отличного дня!',
-  setLanguageMessage: 'Хочешь сменить язык?\nВыбери один из доступних внизу 🇬🇧 or 🇷🇺',
+  setLanguageMessage: 'Хочешь сменить язык?\nВыбери один из доступних внизу 🇬🇧 или 🇷🇺',
 
   countryGroupHtml: '<i>Страна:</i>',
   adultChildGroupHtml: '<i>Взрослые-дети:</i>',
@@ -177,7 +177,7 @@ const russian = {
 const ukrainian = {}
 
 function locale(user) {
-  //|| user.language_code === 'ru' || user.language_code === 'eng' || user.language_code === 'ua'
+  //|| user.language_code === 'ru' || user.language_code === 'eng' || user.language_code === 'Uk-ua'
   if (!user) {return english
   }
   else if (user.language_code === 'ru') {

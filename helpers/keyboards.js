@@ -8,7 +8,6 @@ function mainMenuKeyboard(user) {
       { text: strings(user).mainMenuOptions.chooseLanguage },
       { text: strings(user).mainMenuOptions.findTour },
     ],
-    // [{ text: strings(user).mainMenuOptions.findJobs }]
   ];
 }
 
@@ -44,7 +43,6 @@ function setLanguageKeyboard(user) {
       { text: strings(user).setLanguageOptions.ru },
       { text: strings(user).setLanguageOptions.eng },
     ],
-    // [{ text: strings(user).mainMenuOptions.findJobs }]
   ];
 }
 

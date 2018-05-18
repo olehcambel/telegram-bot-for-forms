@@ -25,9 +25,6 @@ bot.on('message', (msg) => {
         console.log(check.botCommandStart(msg) + " bCS sendMainMenu three")
         keyboards.sendMainMenu(bot, msg.chat.id, false);
       }
-      // } else {
-      //   bot.sendMessage(-272614853, `@${user.username} sent strange message:\n\n\`${msg.text}\``, { parse_mode: 'Markdown' });
-      // }
     } else if (check.botCommandStart(msg)) {
       console.log(check.botCommandStart(msg) + " bCS createProfile four")
       check.createProfile(bot, msg);
@@ -50,10 +47,6 @@ bot.on('callback_query', (msg) => {
 function handleKeyboard(msg, user) {
   const text = msg.text;
   const mainMenuOptions = strings(user).mainMenuOptions;
-
-  // if (text === mainMenuOptions.findJobs) {
-    // keyboards.botInGroup(msg.chat.id, bot);
-  // } else 
   if (text === mainMenuOptions.chooseLanguage) {
     languageInterface.setLanguage(msg, bot);
   } else if (text === mainMenuOptions.findTour) {

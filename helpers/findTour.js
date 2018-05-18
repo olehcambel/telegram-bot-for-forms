@@ -160,7 +160,7 @@ function editorChooseKeyboards(user, period_choose, periodInline, periodOptions)
     let periodDivider = i % 2 === 1
     if (periodInline === strings(user).dayFromChooseInline ||
       periodInline === strings(user).dayToChooseInline) {
-      periodDivider = i === 6 || i === 13 || i === 20 || i === 27 || i === 30
+      periodDivider = i % 7 === 6 || i === 30
     } else if (periodInline === strings(user).yearFromChooseInline ||
       periodInline === strings(user).yearToChooseInline) {
       periodDivider = i === 2
