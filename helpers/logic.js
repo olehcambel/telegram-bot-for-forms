@@ -19,6 +19,7 @@ bot.on('message', (msg) => {
         console.log(isTextInput + " isTextInput one")
         global.eventEmitter.emit(isTextInput, { msg, user, bot });
       } else if (check.replyMarkup(msg, user)) {
+        console.log(msg.chat.id)
         console.log(check.replyMarkup(msg) + " replyMarkup two")
         handleKeyboard(msg, user);
       } else if (check.botCommandStart(msg)) {

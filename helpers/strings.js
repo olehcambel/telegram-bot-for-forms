@@ -7,21 +7,21 @@ const english = {
   initialMessage: 'Welcome to the Telegram bot! It has been created to help you find the dream tour. Enjoy!\nIf you are looking for a tour, please click the "Find tour" button and to change language click the "Choose language".\nThanks for joining!',
   mainMenuMessage: 'Hi again!🙂\nIf you are looking for a tour, please click the "Find tour" button and to change language click the "Choose language".',
 
-  countryChooseMessage: '1. What country and city do you want to go to? For example: "France, Paris".',
-  adultChildChooseMessage: '2. How many adults and children are there going to be? For example: "2 a 2 c".',
-  periodFromChooseMessage: '3. Choose the departure date',
-  periodToChooseMessage: '4. Choose the arrival date',
-  priceChooseMessage: '5. How much money are you ready to spend for your trip?',
-  phoneChooseMessage: '6. Please, type your number so that our agents are able to contact you.',
-  sendAfterFindTourMessage: 'Thank you so much for your time! Have a nice day. Our agents will contact you.',
+  countryChooseMessage: '🌆 What country and city do you want to go to? For example: "France, Paris".',
+  adultChildChooseMessage: '👨‍👩‍👧‍👦 How many adults and children are there going to be? For example: "2 a 2 c".',
+  periodFromChooseMessage: '✈️ Choose the start day of the tour',
+  periodToChooseMessage: 'Choose the end date of the tour ✈️',
+  priceChooseMessage: '💸 How much money are you ready to spend for your trip?',
+  phoneChooseMessage: '📞 Please, type your number so that our agents are able to contact you.',
+  sendAfterFindTourMessage: 'Thank you so much for your time! Have a nice day. 😊',
   setLanguageMessage: 'Wanna change language?\nchoose one of available below 🇬🇧 or 🇷🇺',
 
   countryGroupHtml: '<i>Страна:</i>',
-  adultChildGroupHtml: '<i>Взрослые-дети:</i>',
-  monthFromGroupHtml: '<i>Вылет:</i>',
-  monthToGroupHtml: '<i>Прилет:</i>',
-  priceGroupHtml: '<i>Цена:</i>',
-  phoneNumGroupHtml: '<i>Телефон:</i>',
+  adultChildGroupHtml: '<i>Взрослые-дети:</i>', 
+  monthFromGroupHtml: '<i>Вылет:</i>', 
+  monthToGroupHtml: '<i>Прилет:</i>', 
+  priceGroupHtml: '<i>Цена:</i>', 
+  phoneNumGroupHtml: '<i>Телефон:</i>', 
 
   countryGroup: 'Страна:',
   adultChildGroup: 'Взрослые-дети:',
@@ -31,9 +31,9 @@ const english = {
   phoneNumGroup: 'Телефон:',
 
   mainMenuOptions: {
-    findTour: '🛸🚁 Find tour',
+    findTour: '🔍 Find tour',
     // help: '❔ Help',
-    chooseLanguage: '👅 Choose language',
+    chooseLanguage: '🗣 Choose language',
   },
 
   setLanguageOptions: {
@@ -93,13 +93,13 @@ const russian = {
   initialMessage: 'Здравствуйте! Я - Телеграм бот!\nЕсли Вы ищете тур, то я помогу. Выберите "Найти тур", а для смены языка нажмите на "Выбрать язык".\nСпасибо за то, что выбрали меня!',
   mainMenuMessage: 'Снова привет!🙂\nЕсли Вы ищете тур, то я помогу. Выберите "Найти тур", а для смены языка нажмите на "Выбрать язык".',
 
-  countryChooseMessage: '1. Выберите страну и город, которые хотите посетить. Например: Польша, Варшава.',
-  adultChildChooseMessage: '2. Сколько будет взрослых и детей? Например: 2 в 2 д',
-  periodFromChooseMessage: '3. Выберите дату отъезда.',
-  periodToChooseMessage: '4. Выберите дату приезда.',
-  priceChooseMessage: '5. Сколько Вы готовы потратить на поездку?',
-  phoneChooseMessage: '6. Пожалуйста, укажите свой номер телефона, чтобы наши агенты смогли с Вами связаться.',
-  sendAfterFindTourMessage: 'Большое спасибо за Ваше время! Отличного дня!',
+  countryChooseMessage: '🌆 Выберите страну и город, которые хотите посетить. Например: Польша, Варшава.',
+  adultChildChooseMessage: '👨‍👩‍👧‍👦 Сколько будет взрослых и детей? Например: 2 в 2 д',
+  periodFromChooseMessage: ' ✈️ Выберите дату начала тура.',
+  periodToChooseMessage: 'Выберите дату окончания тура. ✈️',
+  priceChooseMessage: '💸 Сколько Вы готовы потратить на поездку?',
+  phoneChooseMessage: '📞 Пожалуйста, укажите свой номер телефона, чтобы наши агенты смогли с Вами связаться.',
+  sendAfterFindTourMessage: 'Большое спасибо за Ваше время! Отличного дня!  😊',
   setLanguageMessage: 'Хочешь сменить язык?\nВыбери один из доступних внизу 🇬🇧 или 🇷🇺',
 
   countryGroupHtml: '<i>Страна:</i>',
@@ -117,9 +117,9 @@ const russian = {
   phoneNumGroup: 'Телефон:',
 
   mainMenuOptions: {
-    findTour: '🛸🚁 Найти тур',
+    findTour: '🔍 Найти тур',
     // help: '❔ Help',
-    chooseLanguage: '👅 Выбрать язык',
+    chooseLanguage: '🗣 Выбрать язык',
   },
 
   setLanguageOptions: {
@@ -180,7 +180,7 @@ function locale(user) {
   //|| user.language_code === 'ru' || user.language_code === 'eng' || user.language_code === 'Uk-ua'
   if (!user) {return english
   }
-  else if (user.language_code === 'ru') {
+  else if (user.language_code === 'ru' || user.language_code === 'ru-RU') {
     return russian;
   } else {
     return english;
