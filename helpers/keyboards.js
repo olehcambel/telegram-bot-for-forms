@@ -75,7 +75,7 @@ function sendKeyboard(bot, chatId, text, keyboard, then) {
   options.reply_markup = JSON.stringify(options.reply_markup);
   return bot.sendMessage(chatId, text, options)
     .then(then)
-    .catch(/** todo: handle error */);
+    .catch(err => console.log(err));
 }
 
 function sendInline(bot, chatId, text, keyboard, then, markdown) {

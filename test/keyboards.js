@@ -1,5 +1,4 @@
 const { expect } = require("chai");
-// const chai = require('chai');
 const keyboards = require('../helpers/keyboards');
 const sinon = require('sinon');
 const strings = require('../helpers/strings');
