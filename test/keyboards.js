@@ -29,7 +29,7 @@ describe('Keyboards ', () => {
 
       it('should be call @then if @then (function) exist', (done) => {
         sendMessageSuccess = sinon.stub(bot, 'sendMessage').returns(deferredSuccess)
-
+        
         keyboards.sendKeyboard(bot, 312577109, 'text', [], (some) => {
           done()
         })

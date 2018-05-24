@@ -131,7 +131,11 @@ function hideKeyboard(bot, chatId, text) {
 }
 
 function sendTextInGroup(user) {
-  let text = `------- Заявка #${user.forms_id} -------\nstatus: ${user.status}\n${user.first_name} (@${user.username})`
+  const toggleUserId = (user.username)
+    ? `${user.first_name} (@${user.username})`                                                    // &lt;a href="tg://user?id=${user.id}"&gt; ${user.first_name}&lt; /a&gt;
+    : `<a href="tg://user?id=${user.id}">${user.first_name}</a> (<code>&lt;a href="tg://user?id=${user.id}"&gt;${user.first_name}&lt;/a&gt;</code>)`
+
+  let text = `------- Заявка #${user.forms_id} -------\nstatus: ${user.status}\n ${toggleUserId}`
   if (user.country_choose || user.phone_num) {
     text = `${text}\n`
     if (user.country_choose) {

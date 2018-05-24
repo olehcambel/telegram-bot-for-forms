@@ -5,7 +5,7 @@ const findTour = require('./findTour');
 const config = require('../config');
 
 global.eventEmitter.on(strings().countryChooseState, ({ msg, user, bot }) => {
-  const newCountry = msg.text.substring(0, 30)
+  const newCountry = msg.text.substring(0, 40) 
   const userCopy = Object.create(user)
   userCopy.country_choose = newCountry
   userCopy.input_state = undefined
@@ -17,7 +17,7 @@ global.eventEmitter.on(strings().countryChooseState, ({ msg, user, bot }) => {
 })
 
 global.eventEmitter.on(strings().adultChildChooseState, ({ msg, user, bot }) => {
-  const newAdultChild = msg.text.substring(0, 30)
+  const newAdultChild = msg.text.substring(0, 30) 
   const userCopy = Object.create(user)
   userCopy.adult_child = newAdultChild
   userCopy.input_state = undefined
@@ -127,7 +127,7 @@ global.eventEmitter.on(strings().priceChooseInline, ({ msg, bot }) => {
 })
 
 global.eventEmitter.on(strings().phoneNumChooseState, ({ msg, user, bot }) => {
-  const newPhoneNum = msg.text.substring(0, 25)
+  const newPhoneNum = msg.text.substring(0, 30) 
   const userCopy = Object.create(user)
   userCopy.phone_num = newPhoneNum
   userCopy.input_state = undefined
@@ -142,6 +142,7 @@ global.eventEmitter.on(strings().phoneNumChooseState, ({ msg, user, bot }) => {
 })
 
 global.eventEmitter.on(strings().checkedInGroupInline, ({ msg, bot }) => {
+
   let text = msg.message.text.replace(strings().statusInGroupOpen, strings().statusInGroupConfirmed)
     .replace(strings().countryGroup, strings().countryGroupHtml)
     .replace(strings().adultChildGroup, strings().adultChildGroupHtml)
